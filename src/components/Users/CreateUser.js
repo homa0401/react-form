@@ -39,9 +39,13 @@ const CreateUser = (props) => {
     setInputAge(event.target.value);
   };
 
+  const errorHandler = () => {
+    setError(false);
+  };
+
   return (
     <div>
-      <ErrorModal title="Error occured" message="Something get wrong!" />
+      {error && <ErrorModal title={error.title} message={error.message} />}
       <Card className={styles.input}>
         <form onSubmit={createUserHandler}>
           <label htmlFor="name">Name</label>
