@@ -45,7 +45,7 @@ const CreateUser = (props) => {
 
   return (
     <div>
-      {error && <ErrorModal title={error.title} message={error.message} />}
+      {error && <ErrorModal onCloseModale={errorHandler} title={error.title} message={error.message} />}
       <Card className={styles.input}>
         <form onSubmit={createUserHandler}>
           <label htmlFor="name">Name</label>
